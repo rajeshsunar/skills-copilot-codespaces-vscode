@@ -1,0 +1,23 @@
+{
+  "name": "power-sticky",
+  "version": "0.1.0",
+  "description": "Always-on-top offline sticky notes for Windows",
+  "main": "dist-electron/main.js",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently -k \"vite\" \"wait-on tcp:5173 && electron .\"",
+    "build": "vite build && vite build --config vite.electron.config.js && cp electron/preload.js dist-electron/preload.js",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.2",
+    "concurrently": "^9.0.1",
+    "electron": "^31.4.0",
+    "vite": "^5.4.2",
+    "wait-on": "^8.0.1"
+  }
+}
